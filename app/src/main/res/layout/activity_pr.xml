@@ -1,0 +1,542 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.landmarkapp.viewmodel.PRViewModel" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="0dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            app:strokeWidth="2dp"
+            >
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    >
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        app:cardElevation="@dimen/elevation_widget"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/white"
+                        app:cardBackgroundColor="@color/quenumber"
+                        app:cardCornerRadius="25dp"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+
+                            >
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/current_queue_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="เรียกคิวปัจจุบัน"
+                                android:textColor="@color/yellow"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/current_queue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="36sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/current_queue_txt">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        app:cardElevation="@dimen/elevation_widget"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/white"
+                        app:cardBackgroundColor="@color/quenumber2"
+                        app:cardCornerRadius="25dp"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            >
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/next_queue_txt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="เรียกคิวถัดไป"
+                                android:textColor="@color/yellow"
+                                android:textSize="32sp"
+                                android:textStyle="bold"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/next_queue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:text="-"
+                                android:textColor="@color/white"
+                                android:textSize="36sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/next_queue_txt">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    >
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_margin="5dp"
+                        app:cardElevation="@dimen/elevation_widget"
+                        app:strokeWidth="2dp"
+                        app:strokeColor="@color/white"
+                        app:cardBackgroundColor="@color/quenumber3"
+                        app:cardCornerRadius="25dp"
+                        >
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/wait_queue_txt"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
+                                android:text="จำนวนคิวที่รอ"
+                                android:textColor="@color/black"
+                                android:textSize="42sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toTopOf="@+id/wait_queue"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/wait_queue"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="10dp"
+                                android:gravity="center"
+                                android:text="-"
+                                android:textColor="@color/red"
+                                android:textSize="48sp"
+                                android:textStyle="bold"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/wait_queue_txt">
+
+                            </com.google.android.material.textview.MaterialTextView>
+
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@color/tapque"
+
+            >
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/call_btn"
+                android:layout_width="@dimen/img_icon_size"
+                android:layout_height="@dimen/img_icon_size"
+                android:layout_margin="10dp"
+                android:onClick="@{() -> viewModel.callQueue()}"
+                app:cardBackgroundColor="@color/n1"
+                app:cardCornerRadius="@dimen/queue_menu_radius"
+                app:cardElevation="@dimen/elevation_widget"
+                app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
+                app:layout_constraintEnd_toStartOf="@+id/repeat_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="เรียกคิว"
+                    android:textColor="@color/black"
+                    android:textSize="32sp">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/repeat_btn"
+                android:layout_width="@dimen/img_icon_size"
+                android:layout_height="@dimen/img_icon_size"
+                android:layout_margin="10dp"
+                android:onClick="@{() -> viewModel.callRepeat()}"
+                app:cardBackgroundColor="@color/n2"
+                app:cardCornerRadius="@dimen/queue_menu_radius"
+                app:cardElevation="@dimen/elevation_widget"
+                app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
+                app:layout_constraintEnd_toStartOf="@+id/previous_btn"
+                app:layout_constraintStart_toEndOf="@+id/call_btn"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="เรียกซ้ำ"
+                    android:textColor="@color/black"
+                    android:textSize="32sp">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/skip_btn"
+                android:layout_width="@dimen/img_icon_size"
+                android:layout_height="@dimen/img_icon_size"
+                android:layout_margin="10dp"
+                android:onClick="@{() -> viewModel.skipQueue()}"
+                app:cardBackgroundColor="@color/n3"
+                app:cardCornerRadius="@dimen/queue_menu_radius"
+                app:cardElevation="@dimen/elevation_widget"
+                app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/aon"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ข้ามคิว"
+                    android:textColor="@color/black"
+                    android:textSize="32sp">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/previous_btn"
+                android:layout_width="@dimen/img_icon_size"
+                android:layout_height="@dimen/img_icon_size"
+                android:layout_margin="10dp"
+                android:onClick="@{() -> viewModel.callPreviousQueue()}"
+                app:cardBackgroundColor="@color/n4"
+                app:cardCornerRadius="@dimen/queue_menu_radius"
+                app:cardElevation="@dimen/elevation_widget"
+                app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
+                app:layout_constraintEnd_toStartOf="@+id/aon"
+                app:layout_constraintStart_toEndOf="@+id/repeat_btn"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="เรียกคิวก่อนหน้า"
+                    android:textColor="@color/black"
+                    android:textSize="28sp">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/aon"
+                android:layout_width="@dimen/img_icon_size"
+                android:layout_height="@dimen/img_icon_size"
+                android:layout_margin="10dp"
+                android:onClick="@{() -> viewModel.callPreviousQueue()}"
+                app:cardBackgroundColor="@color/n5"
+                app:cardCornerRadius="@dimen/queue_menu_radius"
+                app:cardElevation="@dimen/elevation_widget"
+                app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
+                app:layout_constraintEnd_toStartOf="@+id/skip_btn"
+                app:layout_constraintStart_toEndOf="@+id/previous_btn"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="โอนคิว"
+                    android:textColor="@color/black"
+                    android:textSize="28sp">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear_queue_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:onClick="@{() -> viewModel.clearQueue()}"
+                android:text="เคลียร์คิวทั้งหมด"
+                app:backgroundTint="@color/red"
+                app:cornerRadius="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.material.button.MaterialButton>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <com.google.android.material.card.MaterialCardView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:background="@color/white"-->
+<!--            android:layout_weight="1"-->
+<!--            >-->
+
+<!--            <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                >-->
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/call_btn"-->
+<!--                    android:layout_width="@dimen/img_icon_size"-->
+<!--                    android:layout_height="@dimen/img_icon_size"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:onClick="@{() -> viewModel.callQueue()}"-->
+<!--                    app:cardElevation="@dimen/elevation_widget"-->
+<!--                    app:cardCornerRadius="@dimen/queue_menu_radius"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/repeat_btn"-->
+<!--                    app:layout_constraintHorizontal_bias="0.5"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:cardBackgroundColor="@color/fewGreen"-->
+<!--                    app:strokeWidth="2dp"-->
+<!--                    app:strokeColor="@color/black"-->
+<!--                    >-->
+
+<!--                    <com.google.android.material.textview.MaterialTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:text="เรียกคิว"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="32sp"-->
+<!--                        >-->
+
+<!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/repeat_btn"-->
+<!--                    android:layout_width="@dimen/img_icon_size"-->
+<!--                    android:layout_height="@dimen/img_icon_size"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:onClick="@{() -> viewModel.callRepeat()}"-->
+<!--                    app:cardElevation="@dimen/elevation_widget"-->
+<!--                    app:cardCornerRadius="@dimen/queue_menu_radius"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/skip_btn"-->
+<!--                    app:layout_constraintHorizontal_bias="0.5"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/call_btn"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:layout_constraintVertical_bias="0.512"-->
+<!--                    app:cardBackgroundColor="@color/yellow"-->
+<!--                    app:strokeWidth="2dp"-->
+<!--                    app:strokeColor="@color/black"-->
+<!--                    >-->
+
+<!--                    <com.google.android.material.textview.MaterialTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:text="เรียกซ้ำ"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="32sp"-->
+<!--                        >-->
+
+<!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/skip_btn"-->
+<!--                    android:layout_width="@dimen/img_icon_size"-->
+<!--                    android:layout_height="@dimen/img_icon_size"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:onClick="@{() -> viewModel.skipQueue()}"-->
+<!--                    app:cardElevation="@dimen/elevation_widget"-->
+<!--                    app:cardCornerRadius="@dimen/queue_menu_radius"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toStartOf="@+id/previous_btn"-->
+<!--                    app:layout_constraintHorizontal_bias="0.5"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/repeat_btn"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:cardBackgroundColor="@color/fewRed"-->
+<!--                    app:strokeWidth="2dp"-->
+<!--                    app:strokeColor="@color/black"-->
+<!--                    >-->
+
+<!--                    <com.google.android.material.textview.MaterialTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:text="ข้ามคิว"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="32sp"-->
+<!--                        >-->
+
+<!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+<!--                <com.google.android.material.card.MaterialCardView-->
+<!--                    android:id="@+id/previous_btn"-->
+<!--                    android:layout_width="@dimen/img_icon_size"-->
+<!--                    android:layout_height="@dimen/img_icon_size"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:onClick="@{() -> viewModel.callPreviousQueue()}"-->
+<!--                    app:cardElevation="@dimen/elevation_widget"-->
+<!--                    app:cardCornerRadius="@dimen/queue_menu_radius"-->
+<!--                    app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintHorizontal_bias="0.5"-->
+<!--                    app:layout_constraintStart_toEndOf="@+id/skip_btn"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:cardBackgroundColor="@color/fewViolet"-->
+<!--                    app:strokeWidth="2dp"-->
+<!--                    app:strokeColor="@color/black"-->
+<!--                    >-->
+
+<!--                    <com.google.android.material.textview.MaterialTextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_gravity="center"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:gravity="center"-->
+<!--                        android:text="เรียกคิวก่อนหน้า"-->
+<!--                        android:textColor="@color/black"-->
+<!--                        android:textSize="28sp"-->
+<!--                        >-->
+
+<!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+<!--                </com.google.android.material.card.MaterialCardView>-->
+
+<!--                <com.google.android.material.button.MaterialButton-->
+<!--                    android:id="@+id/clear_queue_btn"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_margin="5dp"-->
+<!--                    android:onClick="@{() -> viewModel.clearQueue()}"-->
+<!--                    android:text="เคลียร์คิวทั้งหมด"-->
+<!--                    app:backgroundTint="@color/red"-->
+<!--                    app:cornerRadius="8dp"-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintStart_toStartOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    app:strokeColor="@color/black"-->
+<!--                    app:strokeWidth="1dp">-->
+
+<!--                </com.google.android.material.button.MaterialButton>-->
+
+<!--            </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        </com.google.android.material.card.MaterialCardView>-->
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>

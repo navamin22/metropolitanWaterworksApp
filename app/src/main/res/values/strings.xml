@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">การประปานครหลวง</string>
+    <string name="landmark_th">การประปานครหลวง</string>
+    <string name="landmark_en">Metropolitan Waterworks Authority</string>
+    <string name="slogan">***บริการประชาชน ด้วยหัวใจ***</string>
+    <string name="please_wait">กรุณารอสักครู่...</string>
+    <string name="thanks">ขอบคุณที่ใช้บริการค่ะ</string>
+    <string name="back">กลับ</string>
+
+</resources>
