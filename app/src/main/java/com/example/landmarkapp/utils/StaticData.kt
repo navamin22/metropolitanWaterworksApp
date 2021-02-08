@@ -12,6 +12,7 @@ class StaticData {
         const val QueueUserApp: String = "QueueUser"
         const val PRApp: String = "Personal Relation"
         const val DisplayApp: String = "Display"
+        const val RatingApp: String = "Rating"
 
         const val url = "http://192.168.1.117/"
         const val url5 = "http://192.168.43.20/"

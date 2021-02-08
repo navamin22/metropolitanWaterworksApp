@@ -101,7 +101,11 @@ class PRViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     fun callRepeat(){
-        insertSoundQueue(queueList[0].queueId, queueList[0].queueNum,"เชิญหมายเลข ${queueList[0].queueNum} ค่ะ","Ready")
+        if (queueList.isNotEmpty()){
+            insertSoundQueue(queueList[0].queueId, queueList[0].queueNum,"เชิญหมายเลข ${queueList[0].queueNum} ค่ะ","Ready")
+        } else {
+            println("QueueList Empty")
+        }
     }
 
     fun skipQueue(){

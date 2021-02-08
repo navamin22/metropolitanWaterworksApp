@@ -20,7 +20,7 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4.1"
+            android:layout_weight="12"
             android:background="@drawable/logo_h11">
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -71,15 +71,16 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/background_metro"
             android:layout_weight="3.25">
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/getQueue"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="100dp"
                 android:layout_width="400dp"
-                android:layout_height="55dp"
-                android:background="@drawable/document3"
+                android:layout_height="80dp"
                 android:onClick="@{() -> viewModel.getQueueSlip()}"
+                android:background="@drawable/document3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
@@ -88,9 +89,10 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/recommend_btn"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_width="400dp"
-                android:layout_height="55dp"
+                android:layout_height="80dp"
+                android:onClick="@{() -> viewModel.getQueueSlip()}"
                 android:background="@drawable/document4"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -100,11 +102,11 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/notice_btn"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_width="400dp"
-                android:layout_height="55dp"
+                android:layout_height="80dp"
+                android:onClick="@{() -> viewModel.getQueueSlip()}"
                 android:background="@drawable/document5"
-                android:onClick="@{() -> viewModel.getNotice()}"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/recommend_btn">
@@ -113,9 +115,9 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn6"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_width="400dp"
-                android:layout_height="55dp"
+                android:layout_height="80dp"
                 android:background="@drawable/document6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -125,9 +127,9 @@
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/btn7"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="30dp"
                 android:layout_width="400dp"
-                android:layout_height="55dp"
+                android:layout_height="80dp"
                 android:background="@drawable/document7"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

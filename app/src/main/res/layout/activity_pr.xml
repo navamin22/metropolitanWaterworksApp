@@ -366,8 +366,9 @@
                 android:layout_margin="5dp"
                 android:onClick="@{() -> viewModel.clearQueue()}"
                 android:text="เคลียร์คิวทั้งหมด"
+                android:textSize="23dp"
                 app:backgroundTint="@color/red"
-                app:cornerRadius="30dp"
+                app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">

@@ -12,7 +12,7 @@
             android:id="@+id/constraintLayout2"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/lightGrey"
+            android:background="@color/white"
             >
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,20 +23,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
-
-                <com.google.android.material.textview.MaterialTextView
-                    android:id="@+id/rate_txt"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
-                    android:text="ระบบประเมินความพึงพอใจ"
-                    android:textSize="16dp"
-                    android:textColor="@color/black"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                </com.google.android.material.textview.MaterialTextView>
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/dialog_close"
@@ -59,9 +45,9 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:gravity="center"
-                android:text="กรุณาให้คะแนนความพึงพอใจ"
+                android:text="ชำระเงินด้วย Qr Code"
                 android:textColor="@color/black"
-                android:textSize="22sp"
+                android:textSize="30dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -69,57 +55,34 @@
 
             </com.google.android.material.textview.MaterialTextView>
 
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/waiting_txt_en"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:gravity="center"
-                android:text="Please Rate Satisfaction"
-                android:textColor="@color/black"
-                android:textSize="20sp"
-                android:textStyle="bold"
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView"
+                android:layout_width="369dp"
+                android:layout_height="528dp"
+                android:layout_margin="20dp"
+                android:src="@drawable/qr_code2"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/waiting_txt">
 
-            </com.google.android.material.textview.MaterialTextView>
+            </androidx.appcompat.widget.AppCompatImageView>
 
-            <com.hsalf.smileyrating.SmileyRating
-                android:id="@+id/ratingBar"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/txt_water"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:numStars="5"
-                android:saveEnabled="true"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/waiting_txt_en">
-
-            </com.hsalf.smileyrating.SmileyRating>
-
-            <com.google.android.material.button.MaterialButton
-                android:id="@+id/submit_rate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="20dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginBottom="10dp"
-                android:padding="10dp"
-                android:text="ให้คะเเนน"
-                android:textSize="22sp"
-                android:elevation="20dp"
-                app:cornerRadius="8dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/white"
-                app:backgroundTint="@color/moreBlue"
+                android:layout_marginBottom="30dp"
+                android:gravity="center"
+                android:text="การประปานครหลวง สาขาสุวรรณภูมิ"
+                android:textColor="@color/black"
+                android:textSize="30dp"
+                android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ratingBar">
+                app:layout_constraintTop_toBottomOf="@+id/appCompatImageView">
 
-            </com.google.android.material.button.MaterialButton>
+            </com.google.android.material.textview.MaterialTextView>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

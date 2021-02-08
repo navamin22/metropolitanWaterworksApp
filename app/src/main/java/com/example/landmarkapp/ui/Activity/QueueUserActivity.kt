@@ -12,7 +12,9 @@ import com.example.landmarkapp.R
 import com.example.landmarkapp.databinding.ActivityQueueBinding
 import com.example.landmarkapp.model.ImageSlider
 import com.example.landmarkapp.ui.Adapters.ImageSliderAdapter
+import com.example.landmarkapp.ui.DialogFragment.QrcodeDialog
 import com.example.landmarkapp.ui.DialogFragment.RateDialog
+import com.example.landmarkapp.ui.DialogFragment.RateDialog2
 import com.example.landmarkapp.utils.BixolonPrinter.BixolonPrinter
 import com.example.landmarkapp.utils.CheckInternet
 import com.example.landmarkapp.utils.StaticData.Companion.bxlPrinter
@@ -21,6 +23,7 @@ import com.example.landmarkapp.utils.StaticData.Companion.logicalName
 import com.example.landmarkapp.utils.StaticData.Companion.portType
 import com.example.landmarkapp.utils.StaticData.Companion.screen_height
 import com.example.landmarkapp.utils.StaticData.Companion.screen_width
+import com.example.landmarkapp.utils.toast
 import com.example.landmarkapp.viewmodel.QueueUserViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
@@ -67,12 +70,33 @@ class QueueUserActivity : BaseActivity() {
     }
 
     private fun onClickActivate(){
-        binding.recommendBtn.setOnClickListener {
+        binding.btn7.setOnClickListener {
             val fm = supportFragmentManager
-            val dialog = RateDialog(this,queueUserViewModel)
+            val dialog = RateDialog2(this,queueUserViewModel)
             dialog.show(fm,"Rating")
         }
+
+        binding.btn6.setOnClickListener{
+            val fm = supportFragmentManager
+            val dialog = QrcodeDialog()
+            dialog.show(fm, "qrcode")
+            toast("ชำระเงินด้วย QR Code")
+        }
+
+        binding.getQueue.setOnClickListener{
+            toast("ชำระค่าประปา/ค่าไฟฟ้า")
+        }
+
+        binding.recommendBtn.setOnClickListener {
+            toast("ติดตั้งประปาใหม่/บริการอื่นๆ")
+        }
+
+        binding.noticeBtn.setOnClickListener {
+            toast("ชำระค่าติดตั้งประปาใหม่")
+        }
+
     }
+
 
     private fun setViewpager(){
         imgSlider.add(ImageSlider(R.drawable.imagewater1))

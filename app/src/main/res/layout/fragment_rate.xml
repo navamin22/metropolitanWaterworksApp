@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/lightGrey"
+            >
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/waiting_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:gravity="center"
+                android:text="กรุณาให้คะแนนความพึงพอใจ"
+                android:textColor="@color/black"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/waiting_txt_en"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Please Rate Satisfaction"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/waiting_txt">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/waiting_txt_en">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_verypoor"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/sad1"
+                    app:layout_constraintEnd_toStartOf="@+id/img_poor"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_poor"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/confused1"
+                    app:layout_constraintEnd_toStartOf="@+id/img_normal"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/img_verypoor"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_normal"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/smile1"
+                    app:layout_constraintEnd_toStartOf="@+id/img_great"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/img_poor"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_great"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/happy1"
+                    app:layout_constraintEnd_toStartOf="@+id/img_excellent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/img_normal"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_excellent"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:src="@drawable/smiling1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/img_great"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatImageView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/verypoor_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ปรับปรุง"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/img_verypoor"
+                    app:layout_constraintStart_toStartOf="@+id/img_verypoor"
+                    app:layout_constraintTop_toBottomOf="@+id/img_verypoor">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/poor_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="พอใช้"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/img_poor"
+                    app:layout_constraintStart_toStartOf="@+id/img_poor"
+                    app:layout_constraintTop_toBottomOf="@+id/img_poor">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/normal_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ปานกลาง"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/img_normal"
+                    app:layout_constraintStart_toStartOf="@+id/img_normal"
+                    app:layout_constraintTop_toBottomOf="@+id/img_normal">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/great_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ดี"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/img_great"
+                    app:layout_constraintStart_toStartOf="@+id/img_great"
+                    app:layout_constraintTop_toBottomOf="@+id/img_great">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/excellent_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="ดีมาก"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="@+id/img_excellent"
+                    app:layout_constraintStart_toStartOf="@+id/img_excellent"
+                    app:layout_constraintTop_toBottomOf="@+id/img_excellent">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/verypoorEN_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Very Poor"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/img_verypoor"
+                    app:layout_constraintStart_toStartOf="@+id/img_verypoor"
+                    app:layout_constraintTop_toBottomOf="@+id/verypoor_txt">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/poorEN_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Poor"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/img_poor"
+                    app:layout_constraintStart_toStartOf="@+id/img_poor"
+                    app:layout_constraintTop_toBottomOf="@+id/poor_txt">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/normalEN_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Average"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/img_normal"
+                    app:layout_constraintStart_toStartOf="@+id/img_normal"
+                    app:layout_constraintTop_toBottomOf="@+id/normal_txt">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/greatEN_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Good"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/img_great"
+                    app:layout_constraintStart_toStartOf="@+id/img_great"
+                    app:layout_constraintTop_toBottomOf="@+id/great_txt">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/excellentEN_txt"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Excellent"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/img_excellent"
+                    app:layout_constraintStart_toStartOf="@+id/img_excellent"
+                    app:layout_constraintTop_toBottomOf="@+id/excellent_txt">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+
+                <!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    >-->
+
+                <!--                    <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                        android:id="@+id/img_poor"-->
+                <!--                        android:layout_width="60dp"-->
+                <!--                        android:layout_height="60dp"-->
+                <!--                        android:src="@drawable/confused1"-->
+                <!--                        >-->
+
+                <!--                    </androidx.appcompat.widget.AppCompatImageView>-->
+
+                <!--                    <com.google.android.material.textview.MaterialTextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:text="Poor"-->
+                <!--                        >-->
+
+                <!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+                <!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+                <!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    >-->
+
+                <!--                    <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                        android:id="@+id/img_normal"-->
+                <!--                        android:layout_width="60dp"-->
+                <!--                        android:layout_height="60dp"-->
+                <!--                        android:src="@drawable/smile1"-->
+                <!--                        >-->
+
+                <!--                    </androidx.appcompat.widget.AppCompatImageView>-->
+
+                <!--                    <com.google.android.material.textview.MaterialTextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:text="Normal"-->
+                <!--                        >-->
+
+                <!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+                <!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+                <!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    >-->
+
+                <!--                    <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                        android:id="@+id/img_sad"-->
+                <!--                        android:layout_width="60dp"-->
+                <!--                        android:layout_height="60dp"-->
+                <!--                        android:src="@drawable/happy1"-->
+                <!--                        >-->
+
+                <!--                    </androidx.appcompat.widget.AppCompatImageView>-->
+
+                <!--                    <com.google.android.material.textview.MaterialTextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:text="Great"-->
+                <!--                        >-->
+
+                <!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+                <!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+                <!--                <androidx.appcompat.widget.LinearLayoutCompat-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:orientation="vertical"-->
+                <!--                    android:layout_weight="1"-->
+                <!--                    >-->
+
+                <!--                    <androidx.appcompat.widget.AppCompatImageView-->
+                <!--                        android:id="@+id/img_great"-->
+                <!--                        android:layout_width="60dp"-->
+                <!--                        android:layout_height="60dp"-->
+                <!--                        android:src="@drawable/smiling1"-->
+                <!--                        >-->
+
+                <!--                    </androidx.appcompat.widget.AppCompatImageView>-->
+
+                <!--                    <com.google.android.material.textview.MaterialTextView-->
+                <!--                        android:layout_width="wrap_content"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_gravity="center"-->
+                <!--                        android:text="Excellent"-->
+                <!--                        >-->
+
+                <!--                    </com.google.android.material.textview.MaterialTextView>-->
+
+                <!--                </androidx.appcompat.widget.LinearLayoutCompat>-->
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+</layout>

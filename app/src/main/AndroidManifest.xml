@@ -47,6 +47,7 @@
             android:screenOrientation="landscape"
             />
         <activity android:name=".ui.Activity.ReportActivity" />
+        <activity android:name=".ui.Activity.RateActivity" />
     </application>
 
 </manifest>

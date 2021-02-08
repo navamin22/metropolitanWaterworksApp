@@ -106,38 +106,6 @@ class QueueUserViewModel(app : Application) : AndroidViewModel(app){
 
     }
 
-    private fun printQueue2(){
-        val bitmap = BitmapFactory.decodeResource(
-            getApplication<Application>().applicationContext.resources,
-            R.drawable.qrcode
-        )
-
-        bxlPrinter.characterSet = BixolonPrinter.CS_THAI11
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_A,0)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_A,1)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_A,2)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_A,4)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_A,64)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_B,0)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_B,1)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_B,2)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_B,4)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_B,64)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_C,0)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_C,1)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_C,2)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_C,4)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_C,64)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_D,0)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_D,1)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_D,2)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_D,4)
-        bxlPrinter.printText("Welcome\n\n",BixolonPrinter.ALIGNMENT_CENTER,BixolonPrinter.ATTRIBUTE_FONT_D,64)
-
-        bxlPrinter.cutPaper()
-
-    }
-
     private fun checkWaitingQueue(): String{
         uiScope.launch {
             getQueue()

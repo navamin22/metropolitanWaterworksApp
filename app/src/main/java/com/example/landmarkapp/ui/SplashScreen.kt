@@ -9,13 +9,11 @@ import android.util.Log
 import android.view.Display
 import android.view.WindowManager
 import android.widget.Toast
-import com.example.landmarkapp.ui.Activity.BaseActivity
-import com.example.landmarkapp.ui.Activity.PRActivity
-import com.example.landmarkapp.ui.Activity.DisplayActivity
-import com.example.landmarkapp.ui.Activity.QueueUserActivity
+import com.example.landmarkapp.ui.Activity.*
 import com.example.landmarkapp.utils.StaticData.Companion.DisplayApp
 import com.example.landmarkapp.utils.StaticData.Companion.PRApp
 import com.example.landmarkapp.utils.StaticData.Companion.QueueUserApp
+import com.example.landmarkapp.utils.StaticData.Companion.RatingApp
 import com.example.landmarkapp.utils.StaticData.Companion.tts
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -50,6 +48,13 @@ class SplashScreen : BaseActivity() {
                     launch {
                         delay(2000)
                         startActivity(Intent(this@SplashScreen, DisplayActivity::class.java))
+                        finishAffinity()
+                    }
+                }
+                "Rating" -> {
+                    launch {
+                        delay(2000)
+                        startActivity(Intent(this@SplashScreen, RateActivity::class.java))
                         finishAffinity()
                     }
                 }

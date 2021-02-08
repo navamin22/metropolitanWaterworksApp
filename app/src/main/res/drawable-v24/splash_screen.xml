@@ -9,8 +9,10 @@
         android:right="55dp"
         android:top="110dp">
         <bitmap
+
             android:gravity="center"
-            android:src="@drawable/logowater" />
+            android:src="@drawable/water55"
+            />
     </item>
 
 </layer-list>
