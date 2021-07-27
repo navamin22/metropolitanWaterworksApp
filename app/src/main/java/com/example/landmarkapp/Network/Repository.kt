@@ -203,9 +203,9 @@ class Repository {
         })
     }
 
-    fun insertReportData(queueId: Int, queueNum: String, queueDate: String, queueStatus: String, serviceChannel: String, serviceCounter: Int,endQueueUserId: Int, queueFinishDate: String, reportDate: String, isTransfer: String, active: String){
+    fun insertReportData(queueId: Int, queueNum: String, queueDate: String, queueStatus: String, serviceChannel: String, serviceCounter: Int, endQueueUserId: Int, latestCallDate: String, queueFinishDate: String, reportDate: String, isTransfer: String, active: String){
         val call = ReportApi()
-            .insertReportData(InsertReportRequest("insert_report_data", queueId,queueNum,queueDate, queueStatus, serviceChannel, serviceCounter, endQueueUserId, queueFinishDate, reportDate, isTransfer, active))
+            .insertReportData(InsertReportRequest("insert_report_data", queueId, queueNum, queueDate, queueStatus, serviceChannel, serviceCounter, endQueueUserId, latestCallDate, queueFinishDate, reportDate, isTransfer, active))
         call.enqueue(object : retrofit2.Callback<String>{
             override fun onResponse(call: Call<String>, response: Response<String>) {
                 val result = response.body()
@@ -687,7 +687,7 @@ class Repository {
         return rateLiveData
     }
 
-    fun getReportBetweenDates(firstDate: String, lastDate: String, typeSelected: String, serviceChannel: String, serviceCounter: String): MutableLiveData<ArrayList<ReportResponse>>{
+    fun getReportBetweenDates(firstDate: String, lastDate: String, typeSelected: String, serviceChannel: String, serviceCounter: String, userId: Int): MutableLiveData<ArrayList<ReportResponse>>{
         var request = ""
         when (typeSelected) {
             "เลือกทั้งหมด" -> {
@@ -699,11 +699,14 @@ class Repository {
             "ช่องบริการ" -> {
                 request = "get_report_between_dates_by_counter"
             }
+            "พนักงาน" -> {
+                request = "get_report_between_dates_by_emp"
+            }
         }
 
         println("FirstDate before query is $firstDate")
         println("LastDate before query is $lastDate")
-        val call = ReportApi().getReportBetweenDates(ReportBetweenDatesRequest(request,firstDate,lastDate,serviceChannel,serviceCounter.toInt()))
+        val call = ReportApi().getReportBetweenDates(ReportBetweenDatesRequest(request,firstDate,lastDate,serviceChannel,serviceCounter.toInt(),userId))
         call.enqueue(object : retrofit2.Callback<List<ReportResponse>>{
             override fun onResponse(
                 call: Call<List<ReportResponse>>,

@@ -152,9 +152,13 @@ class PRViewModel2(app: Application) : AndroidViewModel(app) {
                     currentDateTime)
 
                 if (queueList[0].queueTransferDate.isNotEmpty() || queueList[0].queueTransferDate != null){
-                    insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,currentDateTime,currentDateTime,"Yes","Enable")
+                    insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",
+                        StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,queueList[0].queueChangeDate,
+                        currentDateTime,currentDateTime,"Yes","Enable")
                 } else {
-                    insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,currentDateTime,currentDateTime,"No","Enable")
+                    insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",
+                        StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,queueList[0].queueChangeDate,
+                        currentDateTime,currentDateTime,"No","Enable")
                 }
 
                 queueList.remove(queueList[0])
@@ -448,9 +452,13 @@ class PRViewModel2(app: Application) : AndroidViewModel(app) {
                 currentDateTime)
 
             if (queueList[0].queueTransferDate != null){
-                insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,currentDateTime,currentDateTime,"Yes","Enable")
+                insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",
+                    StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,queueList[0].queueChangeDate,
+                    currentDateTime, currentDateTime,"Yes","Enable")
             } else {
-                insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,currentDateTime,currentDateTime,"No","Enable")
+                insertReportData(queueList[0].queueId,queueList[0].queueNum,queueList[0].queueDate,"Completed",
+                    StaticData.currentChannelType,StaticData.currentChannelNo,StaticData.accountId,queueList[0].queueChangeDate,
+                    currentDateTime, currentDateTime,"No","Enable")
             }
         }
     }
@@ -544,8 +552,8 @@ class PRViewModel2(app: Application) : AndroidViewModel(app) {
         repo.insertTransactionQueue(request, queueId, queueNum, queueDate, queueStatus, serviceChannel, serviceCounter, pressQueueType, calledUserId, transferUserId, queueChangeDate, queueTransferDate, queueFinishDate, transactionDate)
     }
 
-    private fun insertReportData(queueId: Int, queueNum: String, queueDate: String, queueStatus: String, serviceChannel: String, serviceCounter: Int,endQueueUserId: Int, queueFinishDate: String, reportDate: String, isTransfer: String, active: String){
-        repo.insertReportData(queueId, queueNum, queueDate, queueStatus, serviceChannel, serviceCounter, endQueueUserId, queueFinishDate, reportDate, isTransfer, active)
+    private fun insertReportData(queueId: Int, queueNum: String, queueDate: String, queueStatus: String, serviceChannel: String, serviceCounter: Int, endQueueUserId: Int, latestCallDate: String, queueFinishDate: String, reportDate: String, isTransfer: String, active: String){
+        repo.insertReportData(queueId, queueNum, queueDate, queueStatus, serviceChannel, serviceCounter, endQueueUserId, latestCallDate, queueFinishDate, reportDate, isTransfer, active)
     }
 
 }

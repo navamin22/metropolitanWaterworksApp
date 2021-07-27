@@ -28,9 +28,9 @@ class ReportViewModel: ViewModel() {
     private var belowRateList = ArrayList<RateResponse>()
     private var rateHome = ArrayList<RateResponse>()
     var spinnerAccount = ArrayList<String>()
-    var betweenReportLiveDate: MutableLiveData<ArrayList<ReportResponse>> = repo.getReportBetweenDates("","","","","0")
+    var betweenReportLiveDate: MutableLiveData<ArrayList<ReportResponse>> = repo.getReportBetweenDates("","","","","0",0)
     var betweenRateLiveData: MutableLiveData<ArrayList<RateResponse>> = repo.getRateBetweenDates("", "", 0)
-    var timeReportLiveData: MutableLiveData<ArrayList<ReportResponse>> = repo.getReport()
+    var timeReportLiveData: MutableLiveData<ArrayList<ReportResponse>> = repo.getReportBetweenDates("","","","","0",0)
     var accountLiveData: MutableLiveData<ArrayList<AccountResponse>> = repo.getAccount()
     var calendarLiveData: MutableLiveData<Calendar> = MutableLiveData()
     var calendarListLiveData: MutableLiveData<List<Calendar>> = MutableLiveData()
@@ -52,7 +52,7 @@ class ReportViewModel: ViewModel() {
         setLastYear(lastYear)
     }
 
-    fun getReportBetweenDates(firstDate: String, lastDate: String, typeSelected: String, serviceChannel: String, serviceCounter: String){
+    fun getReportBetweenDates(firstDate: String, lastDate: String, typeSelected: String, serviceChannel: String, serviceCounter: String, userId: Int){
         println("firstDate is : $firstDate")
         println("lastDate is : $lastDate")
         val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.US)
@@ -65,7 +65,7 @@ class ReportViewModel: ViewModel() {
         Log.v("First Date", day1)
         Log.v("Last Date", day2)
 
-        repo.getReportBetweenDates(day1, day2, typeSelected, serviceChannel, serviceCounter)
+        repo.getReportBetweenDates(day1, day2, typeSelected, serviceChannel, serviceCounter, userId)
     }
 
     fun getRateBetweenDates(firstDate: String, lastDate: String, rateAccountId: Int){

@@ -12,6 +12,8 @@ data class ReportBetweenDatesRequest (
     @SerializedName("serviceChannel")
     val serviceChannel: String = "",
     @SerializedName("serviceCounter")
-    val serviceCounter: Int
+    val serviceCounter: Int,
+    @SerializedName("userId")
+    val userId: Int
 
 )

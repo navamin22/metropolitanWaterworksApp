@@ -14,6 +14,7 @@ import com.example.landmarkapp.ui.Activity.Report.DashboardActivity
 import com.example.landmarkapp.ui.DialogFragment.SelectDate
 import com.example.landmarkapp.ui.Fragment.BaseFragment
 import com.example.landmarkapp.utils.StaticData
+import com.example.landmarkapp.utils.snackbar
 import com.example.landmarkapp.viewmodel.ReportViewModel
 import java.util.*
 
@@ -25,7 +26,11 @@ class TimeQueryFragment(private val activity: DashboardActivity, private val vie
     private lateinit var arrAdapter4: ArrayAdapter<String>
     lateinit var binding: FragmentQueryTimeBinding
     lateinit var calendarList: List<Calendar>
-
+    var selectAnother = false
+    var selectEmp = false
+    var typeSelected = ""
+    var serviceChannel = ""
+    var serviceCounter = "0"
     var year = 0
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -44,18 +49,60 @@ class TimeQueryFragment(private val activity: DashboardActivity, private val vie
 
     private fun onClickActivate(){
         binding.constraintLayout2.setOnClickListener {
-            activity.supportFragmentManager.beginTransaction().apply {
-                val descFrag = TimeFragment(activity,viewModel,binding.firstday.text.toString(),
-                    binding.lastday.text.toString())
-                replace(R.id.dbfragment,descFrag)
-                addToBackStack(null)
-                commit()
-            }
+            checkData()
         }
         binding.day.setOnClickListener {
             val fm = activity.supportFragmentManager
             val dialog = SelectDate(activity,viewModel)
             dialog.show(fm,"SelectDate")
+        }
+    }
+
+    private fun checkData(){
+        val firstDay = binding.firstday.text.toString()
+        val lastDay = binding.lastday.text.toString()
+        if (firstDay.isEmpty() || lastDay.isEmpty()){
+            binding.root.snackbar("กรุณาใส่วันที่ให้ครบค่ะ")
+        } else {
+            var id = 0
+            if (selectEmp){
+                if (binding.spinnerType.selectedItem.toString().isNotEmpty()){
+                    typeSelected = binding.spinnerCategory.selectedItem.toString()
+                    id = viewModel.accountLiveData.value?.get(binding.spinnerType.selectedItemPosition)!!.accountId
+
+                    activity.supportFragmentManager.beginTransaction().apply {
+                        val descFrag = TimeFragment(activity,viewModel,binding.firstday.text.toString(),
+                            binding.lastday.text.toString(),typeSelected,serviceChannel,serviceCounter,id)
+                        replace(R.id.dbfragment,descFrag)
+                        addToBackStack(null)
+                        commit()
+                    }
+                }
+            } else {
+                if (selectAnother){
+                    when (binding.spinnerCategory.selectedItemPosition) {
+                        0 -> {
+                            typeSelected = binding.spinnerCategory.selectedItem.toString()
+                        }
+                        1 -> {
+                            serviceChannel = binding.spinnerType.selectedItem.toString()
+                            typeSelected = binding.spinnerCategory.selectedItem.toString()
+                        }
+                        2 -> {
+                            serviceCounter = binding.spinnerType.selectedItem.toString()
+                            typeSelected = binding.spinnerCategory.selectedItem.toString()
+                        }
+                    }
+                }
+
+                activity.supportFragmentManager.beginTransaction().apply {
+                    val descFrag = TimeFragment(activity,viewModel,binding.firstday.text.toString(),
+                        binding.lastday.text.toString(),typeSelected,serviceChannel,serviceCounter,0)
+                    replace(R.id.dbfragment,descFrag)
+                    addToBackStack(null)
+                    commit()
+                }
+            }
         }
     }
 
@@ -75,47 +122,52 @@ class TimeQueryFragment(private val activity: DashboardActivity, private val vie
                 calendarList = calendarLiveData
             }
         })
-        viewModel.timeReportLiveData.observe(activity,{
-
-        })
     }
 
     private fun setSpinner(){
         arrAdapter = ArrayAdapter(
             activity,R.layout.style_spinner, StaticData.reportTypeOf
         )
-        binding.spinner.adapter = arrAdapter
-        binding.spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+        binding.spinnerCategory.adapter = arrAdapter
+        binding.spinnerCategory.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
-                println("Selected is = ${binding.spinner.selectedItem}")
+                println("Selected is = ${binding.spinnerCategory.selectedItem}")
                 when {
-                    binding.spinner.selectedItem.toString() == "เลือกทั้งหมด" -> {
+                    binding.spinnerCategory.selectedItem.toString() == "เลือกทั้งหมด" -> {
                         arrAdapter = ArrayAdapter(
                             activity, R.layout.style_spinner
                         )
                         binding.spinnerType.visibility = View.GONE
                         binding.spinnerType.adapter = arrAdapter
+                        selectAnother = false
+                        selectEmp = false
                     }
-                    binding.spinner.selectedItem.toString() == "การให้บริการ" -> {
+                    binding.spinnerCategory.selectedItem.toString() == "การให้บริการ" -> {
                         arrAdapter2 = ArrayAdapter(
                             activity, R.layout.style_spinner, StaticData.typeService
                         )
                         binding.spinnerType.visibility = View.VISIBLE
                         binding.spinnerType.adapter = arrAdapter2
+                        selectAnother = true
+                        selectEmp = false
                     }
-                    binding.spinner.selectedItem.toString() == "ช่องบริการ" -> {
+                    binding.spinnerCategory.selectedItem.toString() == "ช่องบริการ" -> {
                         arrAdapter3 = ArrayAdapter(
                             activity,R.layout.style_spinner, StaticData.counterOfList
                         )
                         binding.spinnerType.visibility = View.VISIBLE
                         binding.spinnerType.adapter = arrAdapter3
+                        selectAnother = true
+                        selectEmp = false
                     }
-                    binding.spinner.selectedItem.toString() == "พนักงาน" -> {
+                    binding.spinnerCategory.selectedItem.toString() == "พนักงาน" -> {
                         arrAdapter4 = ArrayAdapter(
                             activity,R.layout.style_spinner, viewModel.spinnerAccount
                         )
                         binding.spinnerType.visibility = View.VISIBLE
                         binding.spinnerType.adapter = arrAdapter4
+                        selectAnother = true
+                        selectEmp = true
                     }
                 }
             }

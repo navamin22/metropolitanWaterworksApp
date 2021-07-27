@@ -78,7 +78,7 @@ class CountFragment(private val activity: DashboardActivity, private val viewMod
     }
 
     private fun observeData(){
-        viewModel.getReportBetweenDates(firstDate, lastDate, typeSelected, serviceChannel, serviceCounter)
+        viewModel.getReportBetweenDates(firstDate, lastDate, typeSelected, serviceChannel, serviceCounter, 0)
         viewModel.betweenReportLiveDate.observe(activity, {
             viewModel.setReportList(it)
             calculateDate(it)

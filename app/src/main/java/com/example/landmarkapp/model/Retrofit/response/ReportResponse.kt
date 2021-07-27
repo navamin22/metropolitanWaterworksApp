@@ -19,6 +19,8 @@ data class ReportResponse (
     val serviceCounter: Int,
     @SerializedName("endQueueUserId")
     val endQueueUserId: Int,
+    @SerializedName("latestCallDate")
+    val latestCallDate: String = "",
     @SerializedName("queueFinishDate")
     val queueFinishDate: String = "",
     @SerializedName("reportDate")
