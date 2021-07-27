@@ -17,4 +17,8 @@
         <item name="android:windowExitAnimation">@anim/dialog_slide_down</item>
     </style>
 
+    <style name="CustomDialogTheme">
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
 </resources>

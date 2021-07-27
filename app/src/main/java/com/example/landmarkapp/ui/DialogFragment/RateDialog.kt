@@ -46,9 +46,9 @@ class RateDialog(private val activity: QueueUserActivity, private val viewModel:
         binding.submitRate.setOnClickListener {
             if (rating != -1){
                 if (rating < 3){
-                    viewModel.insertRate(rating,ratingTxt,"Enable","Below")
+                    //viewModel.insertRate(rating,ratingTxt,"Enable","Below")
                 } else {
-                    viewModel.insertRate(rating,ratingTxt,"Enable","Normal")
+                    //viewModel.insertRate(rating,ratingTxt,"Enable","Normal")
                 }
                 val dialog = LayoutInflater.from(myContext).inflate(R.layout.dialog_thanks,null)
                 val builder = AlertDialog.Builder(myContext).setView(dialog)

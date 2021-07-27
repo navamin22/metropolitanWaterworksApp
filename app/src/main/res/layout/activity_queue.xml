@@ -11,134 +11,259 @@
             type="com.example.landmarkapp.viewmodel.QueueUserViewModel" />
     </data>
 
-    <androidx.appcompat.widget.LinearLayoutCompat
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="12"
-            android:background="@drawable/logo_h11">
+            android:id="@+id/constraint_queue"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2.75"
-            android:visibility="gone"
-            android:background="@color/lightGrey"
-            >
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0">
-
-                <androidx.viewpager2.widget.ViewPager2
-                    android:id="@+id/viewpager"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center"
-                    android:layout_margin="40dp"
-                    android:layout_weight="2">
-
-                </androidx.viewpager2.widget.ViewPager2>
-
-                <androidx.appcompat.widget.AppCompatImageView
-                    android:id="@+id/appCompatTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp"
-                    android:layout_marginBottom="15dp"
-                    android:background="@drawable/banner1"
-                    android:gravity="center">
-
-                </androidx.appcompat.widget.AppCompatImageView>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/background_metro"
-            android:layout_weight="3.25">
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/getQueue"
-                android:layout_marginTop="100dp"
-                android:layout_width="400dp"
-                android:layout_height="80dp"
-                android:onClick="@{() -> viewModel.getQueueSlip()}"
-                android:background="@drawable/document3"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mwa_logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="การประปานครหลวง"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-            </androidx.appcompat.widget.AppCompatImageButton>
+            </com.google.android.material.textview.MaterialTextView>
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/recommend_btn"
-                android:layout_marginTop="30dp"
-                android:layout_width="400dp"
-                android:layout_height="80dp"
-                android:onClick="@{() -> viewModel.getQueueSlip()}"
-                android:background="@drawable/document4"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mwa_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="----"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/getQueue">
+                app:layout_constraintTop_toBottomOf="@+id/mwa_logo">
 
-            </androidx.appcompat.widget.AppCompatImageButton>
+            </com.google.android.material.textview.MaterialTextView>
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/notice_btn"
-                android:layout_marginTop="30dp"
-                android:layout_width="400dp"
-                android:layout_height="80dp"
-                android:onClick="@{() -> viewModel.getQueueSlip()}"
-                android:background="@drawable/document5"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mwa_bills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:visibility="gone"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/recommend_btn">
+                app:layout_constraintTop_toBottomOf="@+id/mwa_title">
 
-            </androidx.appcompat.widget.AppCompatImageButton>
+            </com.google.android.material.textview.MaterialTextView>
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn6"
-                android:layout_marginTop="30dp"
-                android:layout_width="400dp"
-                android:layout_height="80dp"
-                android:background="@drawable/document6"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mwa_queue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="----"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/notice_btn">
+                app:layout_constraintTop_toBottomOf="@+id/mwa_bills">
 
-            </androidx.appcompat.widget.AppCompatImageButton>
+            </com.google.android.material.textview.MaterialTextView>
 
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/btn7"
-                android:layout_marginTop="30dp"
-                android:layout_width="400dp"
-                android:layout_height="80dp"
-                android:background="@drawable/document7"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mwa_wait_queue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:text="คิวที่รอ 1 คิว"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn6">
+                app:layout_constraintTop_toBottomOf="@+id/mwa_queue">
 
-            </androidx.appcompat.widget.AppCompatImageButton>
+            </com.google.android.material.textview.MaterialTextView>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/mwa_date_queue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:text="09:54 05/11/2563"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/mwa_wait_queue">
+
+            </com.google.android.material.textview.MaterialTextView>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/linear_menu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="12"
+                android:background="@drawable/logo_h11">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="2.75"
+                android:background="@color/lightGrey"
+                android:visibility="gone">
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.viewpager2.widget.ViewPager2
+                        android:id="@+id/viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_margin="40dp"
+                        android:layout_weight="2">
+
+                    </androidx.viewpager2.widget.ViewPager2>
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/appCompatTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginBottom="15dp"
+                        android:background="@drawable/banner1"
+                        android:gravity="center">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+                </androidx.appcompat.widget.LinearLayoutCompat>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="3.25"
+                android:background="@drawable/background_metro">
+
+                <androidx.core.widget.ContentLoadingProgressBar
+                    android:id="@+id/progress_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:progressBackgroundTint="@color/moreBlue"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.core.widget.ContentLoadingProgressBar>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/getQueue"
+                    android:layout_width="400dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="100dp"
+                    android:background="@drawable/pay_cost"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatImageButton>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/recommend_btn"
+                    android:layout_width="400dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/new_install"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/getQueue">
+
+                </androidx.appcompat.widget.AppCompatImageButton>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/notice_btn"
+                    android:layout_width="400dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/pay_more_one"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/recommend_btn">
+
+                </androidx.appcompat.widget.AppCompatImageButton>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn6"
+                    android:layout_width="400dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="30dp"
+                    android:visibility="gone"
+                    android:background="@drawable/document6"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/notice_btn">
+
+                </androidx.appcompat.widget.AppCompatImageButton>
+
+                <androidx.appcompat.widget.AppCompatImageButton
+                    android:id="@+id/btn7"
+                    android:layout_width="400dp"
+                    android:layout_height="80dp"
+                    android:layout_marginTop="60dp"
+                    android:background="@drawable/rating_btn"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/btn6">
+
+                </androidx.appcompat.widget.AppCompatImageButton>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </layout>

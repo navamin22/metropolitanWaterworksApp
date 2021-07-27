@@ -1,14 +1,10 @@
 package com.example.landmarkapp.model.Retrofit.Interface
 
-import com.example.landmarkapp.model.Retrofit.RequestValue.NormalRequest
-import com.example.landmarkapp.model.Retrofit.RequestValue.RateRequest
-import com.example.landmarkapp.model.Retrofit.RequestValue.ReportRequest
+import com.example.landmarkapp.model.Retrofit.RequestValue.*
 import com.example.landmarkapp.model.Retrofit.response.ReportResponse
 import com.example.landmarkapp.utils.StaticData.Companion.report_php
 import retrofit2.Call
-import retrofit2.Response
 import retrofit2.http.Body
-import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface ReportInterface {
@@ -19,8 +15,23 @@ interface ReportInterface {
     ): Call<String>
 
     @POST(report_php)
+    fun insertReportData(
+        @Body request: InsertReportRequest
+    ): Call<String>
+
+    @POST(report_php)
     fun getReport(
         @Body request: NormalRequest
+    ): Call<List<ReportResponse>>
+
+    @POST(report_php)
+    fun getReportFromDate(
+        @Body request: ReportDateRequest
+    ): Call<List<ReportResponse>>
+
+    @POST(report_php)
+    fun getReportBetweenDates(
+        @Body request: ReportBetweenDatesRequest
     ): Call<List<ReportResponse>>
 
 }

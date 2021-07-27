@@ -43,11 +43,10 @@
                 android:id="@+id/waiting_txt"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
                 android:gravity="center"
-                android:text="ชำระเงินด้วย Qr Code"
+                android:text="ชำระเงินด้วย QR Code"
                 android:textColor="@color/black"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -55,15 +54,231 @@
 
             </com.google.android.material.textview.MaterialTextView>
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/appCompatImageView"
-                android:layout_width="369dp"
-                android:layout_height="528dp"
-                android:layout_margin="20dp"
-                android:src="@drawable/qr_code2"
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/pay_form"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:cardElevation="20dp"
+                app:strokeWidth="1dp"
+                app:cardCornerRadius="12dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/waiting_txt">
+                app:layout_constraintTop_toBottomOf="@+id/waiting_txt"
+                >
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/appCompatImageView2"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:src="@drawable/logowater2"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                    </androidx.appcompat.widget.AppCompatImageView>
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/constraintLayout3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="@+id/appCompatImageView2"
+                        app:layout_constraintStart_toEndOf="@+id/appCompatImageView2"
+                        app:layout_constraintTop_toTopOf="@+id/appCompatImageView2">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/title_th"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="การประปานครหลวง"
+                            android:textColor="@color/blue"
+                            android:textSize="28sp"
+                            android:textStyle="bold"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/title_en"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Metropolitan Waterworks Authority"
+                            android:textColor="@color/blue"
+                            android:textSize="28sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/title_th">
+
+                        </com.google.android.material.textview.MaterialTextView>
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/pay_name_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ชื่อผู้ชำระเงิน:"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/pay_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="นายกฤตภาส คงประดิษฐ์"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintStart_toEndOf="@+id/address_txt"
+                        app:layout_constraintTop_toBottomOf="@+id/appCompatImageView2">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/address_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ที่อยู่(Address):"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/pay_name_txt">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/address"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="99/19 บริษัทโมเดิร์นพอส จำกัด \nถนนประเสริฐมนูกิจ 29 เขตลาดพร้าว \nเเขวงจรเข้บัว กรุงเทพ 10230"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        android:maxLines="5"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@+id/address_txt"
+                        app:layout_constraintTop_toBottomOf="@+id/pay_name_txt">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_serial_number_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ทะเบียนผู้ใช้"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toStartOf="@+id/total_water_use_txt"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/address">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/total_water_use_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="จำนวนน้ำใช้"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toStartOf="@+id/water_cost_txt"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/user_serial_number_txt"
+                        app:layout_constraintTop_toBottomOf="@+id/address">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/water_cost_txt"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="ค่าน้ำเเละบริการ"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/black"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/total_water_use_txt"
+                        app:layout_constraintTop_toBottomOf="@+id/address">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/user_serial_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="69373603"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/user_serial_number_txt"
+                        app:layout_constraintStart_toStartOf="@+id/user_serial_number_txt"
+                        app:layout_constraintTop_toBottomOf="@+id/user_serial_number_txt">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/total_water_use"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="13 หน่วย"
+                        android:textSize="24sp"
+                        android:textColor="@color/black"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/total_water_use_txt"
+                        app:layout_constraintStart_toStartOf="@+id/total_water_use_txt"
+                        app:layout_constraintTop_toBottomOf="@+id/user_serial_number_txt">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/water_cost"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:text="164.83 บาท"
+                        android:textColor="@color/black"
+                        android:textSize="24sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/water_cost_txt"
+                        app:layout_constraintStart_toStartOf="@+id/water_cost_txt"
+                        app:layout_constraintTop_toBottomOf="@+id/user_serial_number_txt">
+
+                    </com.google.android.material.textview.MaterialTextView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/appCompatImageView"
+                android:layout_width="300dp"
+                android:layout_height="300dp"
+                android:layout_margin="10dp"
+                android:src="@drawable/promp_qrcode"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/pay_form">
 
             </androidx.appcompat.widget.AppCompatImageView>
 
@@ -71,18 +286,39 @@
                 android:id="@+id/txt_water"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="30dp"
                 android:gravity="center"
+                android:visibility="gone"
                 android:text="การประปานครหลวง สาขาสุวรรณภูมิ"
                 android:textColor="@color/black"
-                android:textSize="30dp"
+                android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/appCompatImageView">
 
             </com.google.android.material.textview.MaterialTextView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/submit_payment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
+                android:padding="12dp"
+                android:text="ยืนยันการชำระเงิน"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/smiley_background"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/black"
+                app:cornerRadius="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_water">
+
+            </com.google.android.material.button.MaterialButton>
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

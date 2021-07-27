@@ -3,8 +3,11 @@
     <string name="landmark_th">การประปานครหลวง</string>
     <string name="landmark_en">Metropolitan Waterworks Authority</string>
     <string name="slogan">***บริการประชาชน ด้วยหัวใจ***</string>
+    <string name="marquee_txt">สำนักงานประปานครหลวง ยินดีต้อนรับ บริการรับชำระค่าน้ำประปา ค่าไฟฟ้า(ต้องไม่เกินกำหนดในบิลค่าไฟ) เปิดบริการรับชำระตั้งเเต่วันจันทร์ - วันศุกร์ เวลา 07.30 - 15.30 น.</string>
     <string name="please_wait">กรุณารอสักครู่...</string>
     <string name="thanks">ขอบคุณที่ใช้บริการค่ะ</string>
     <string name="back">กลับ</string>
+    <string name="func_success">func success</string>
+    <string name="func_failed">func failed</string>
 
 </resources>

@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.example.landmarkapp.R
 import com.example.landmarkapp.databinding.ActivityPrBinding
 import com.example.landmarkapp.viewmodel.PRViewModel
+import com.example.landmarkapp.viewmodel.PRViewModel2
 
 class PRActivity : BaseActivity(){
     private lateinit var binding: ActivityPrBinding
@@ -25,7 +26,14 @@ class PRActivity : BaseActivity(){
     private fun initInstance(){
         setViewModel()
         observeData()
+        onClickActivate()
         timing()
+    }
+
+    private fun onClickActivate(){
+        binding.clearQueueBtn.setOnClickListener {
+            prViewModel.submitPasswordDialog(this)
+        }
     }
 
     private fun setViewModel(){

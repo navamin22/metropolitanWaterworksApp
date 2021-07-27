@@ -12,6 +12,14 @@ data class RateRequest (
     @SerializedName("active")
     val active: String = "",
     @SerializedName("rateStatus")
-    val rateStatus: String = ""
+    val rateStatus: String = "",
+    @SerializedName("telNumber")
+    val telNumber: String = "",
+    @SerializedName("reasonRateLow")
+    val reasonRateLow: String = "",
+    @SerializedName("serviceCounter")
+    val serviceChannel: Int,
+    @SerializedName("ratedAccountId")
+    val ratedAccountId: Int
 
 )

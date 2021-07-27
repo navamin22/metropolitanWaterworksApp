@@ -17,6 +17,7 @@
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
 
     <application
         android:allowBackup="true"
@@ -29,9 +30,22 @@
         android:largeHeap="true"
         >
 
+        <uses-library android:name="org.apache.http.legacy" android:required="false"/>
+
+        <service
+            android:name=".Network.Services.RateCheckService"
+            android:enabled="true"
+            android:exported="true"
+            >
+
+        </service>
+
+        <service android:name=".Network.Services.NotificationsService"></service>
+
+        <receiver android:name=".Receiver.ResetQueueReceiver"/>
+
         <activity
             android:name=".ui.SplashScreen"
-            android:screenOrientation="portrait"
             android:theme="@style/SplashTheme"
             >
             <intent-filter>
@@ -47,7 +61,30 @@
             android:screenOrientation="landscape"
             />
         <activity android:name=".ui.Activity.ReportActivity" />
-        <activity android:name=".ui.Activity.RateActivity" />
+        <activity android:name=".ui.Activity.RateActivity"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".ui.Activity.CommercialActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".ui.Activity.Display2Activity"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".ui.Activity.PRActivity2"
+            android:screenOrientation="landscape"
+            />
+        <activity android:name=".ui.Activity.Report.DashboardActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".ui.Activity.Report.AccountActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".ui.Activity.DisplayPortraitActivity"
+            android:screenOrientation="portrait"
+            />
+        <activity android:name=".ui.Activity.LoginCounterActivity"
+            android:screenOrientation="landscape"
+            />
     </application>
 
 </manifest>

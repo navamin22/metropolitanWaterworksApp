@@ -16,5 +16,10 @@ data class SoundQueueResponse (
     @SerializedName("sound_date")
     val sound_date: String = "",
     @SerializedName("sound_date_finish")
-    val sound_date_finish: String = ""
+    val sound_date_finish: String = "",
+
+    @SerializedName("serviceChannel")
+    val serviceChannel: String = "",
+    @SerializedName("serviceCounter")
+    val serviceCounter: Int
 )

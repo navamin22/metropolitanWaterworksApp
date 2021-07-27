@@ -10,5 +10,8 @@ data class QueueRequest (
     @SerializedName("queueDate")
     val queueDate: String = "",
     @SerializedName("queueStatus")
-    val queueStatus: String = ""
+    val queueStatus: String = "",
+
+    @SerializedName("serviceChannel")
+    val serviceChannel: String = ""
 )

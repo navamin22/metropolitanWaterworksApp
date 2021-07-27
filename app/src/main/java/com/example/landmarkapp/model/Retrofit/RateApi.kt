@@ -1,7 +1,8 @@
 package com.example.landmarkapp.model.Retrofit
 
 import com.example.landmarkapp.model.Retrofit.Interface.RateService
-import com.example.landmarkapp.model.Retrofit.RequestValue.RateRequest
+import com.example.landmarkapp.model.Retrofit.RequestValue.*
+import com.example.landmarkapp.model.Retrofit.response.RateResponse
 import com.example.landmarkapp.utils.StaticData.Companion.folder
 import com.example.landmarkapp.utils.StaticData.Companion.php
 import com.example.landmarkapp.utils.StaticData.Companion.rate_php
@@ -28,5 +29,25 @@ class RateApi {
 
     fun insertRate(request: RateRequest): Call<String> {
         return api.insertRate(request)
+    }
+
+    fun getRate(request: NormalRequest): Call<List<RateResponse>> {
+        return api.getRate(request)
+    }
+
+    fun getRateFromDate(request: RateFromYearMonthRequest): Call<List<RateResponse>> {
+        return api.getRateFromDate(request)
+    }
+
+    fun getRateFromYearMonth(request: RateFromYearMonthRequest): Call<List<RateResponse>>{
+        return api.getRateFromYearMonth(request)
+    }
+
+    fun getRateBetweenDates(request: RateBetweenDateRequest): Call<List<RateResponse>>{
+        return api.getRateBetweenDates(request)
+    }
+
+    fun updateRate(request: RateUpdateRequest): Call<String> {
+        return api.updateRate(request)
     }
 }

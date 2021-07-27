@@ -25,6 +25,20 @@
 
         </com.google.android.material.textview.MaterialTextView>
 
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/optional_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:visibility="gone"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/thanks">
+
+        </com.google.android.material.textview.MaterialTextView>
+
         <com.google.android.material.button.MaterialButton
             android:id="@+id/back_btn"
             android:layout_width="match_parent"
@@ -33,14 +47,14 @@
             android:padding="10dp"
             android:text="ตกลง"
             android:textSize="20sp"
-            app:strokeWidth="1dp"
-            app:strokeColor="@color/white"
-            app:cornerRadius="15dp"
             app:backgroundTint="@color/moreBlue"
+            app:cornerRadius="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/thanks">
+            app:layout_constraintTop_toBottomOf="@+id/optional_txt"
+            app:strokeColor="@color/white"
+            app:strokeWidth="1dp">
 
         </com.google.android.material.button.MaterialButton>
 

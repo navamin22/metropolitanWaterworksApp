@@ -29,8 +29,8 @@ class ImageSliderAdapter(private val context: Context, private val items: ArrayL
         Glide
             .with(context)
             .load(items[position].image)
-            .centerCrop()
-            .fitCenter()
+            //.centerCrop()
+            //.fitCenter()
             .override(2000,1500)
             .into(holder.imgSlider)
     }

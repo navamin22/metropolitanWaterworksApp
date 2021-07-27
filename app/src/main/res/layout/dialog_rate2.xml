@@ -29,7 +29,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="20dp"
-                    android:text="ระบบประเมินความพึงพอใจ"
+                    android:text="ประเมินความพึงพอใจ"
                     android:textSize="16dp"
                     android:textColor="@color/black"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -60,7 +60,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:text="กรุณาให้คะแนนความพึงพอใจ"
-                android:textColor="@color/black"
+                android:textColor="@color/blue"
                 android:textSize="22sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -76,8 +76,7 @@
                 android:layout_margin="10dp"
                 android:gravity="center"
                 android:text="Please Rate Satisfaction"
-                android:textColor="@color/black"
-                android:textSize="20sp"
+                android:textColor="@color/blue"                android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -85,17 +84,61 @@
 
             </com.google.android.material.textview.MaterialTextView>
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/please_select_counter"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginBottom="30dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_margin="20dp"
+                android:text="กรุณาเลือกช่องบริการค่ะ"
+                android:textColor="@color/blue"
+                android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/waiting_txt_en">
+
+            </com.google.android.material.textview.MaterialTextView>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraint_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:paddingBottom="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/please_select_counter">
+
+                <androidx.appcompat.widget.AppCompatSpinner
+                    android:id="@+id/counter_spinner"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/spinner_styles"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </androidx.appcompat.widget.AppCompatSpinner>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/constraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/constraint_spinner">
 
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/img_verypoor"
@@ -188,7 +231,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="ปานกลาง"
+                    android:text="ดี"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/img_normal"
                     app:layout_constraintStart_toStartOf="@+id/img_normal"
@@ -201,7 +244,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="ดี"
+                    android:text="ดีมาก"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/img_great"
                     app:layout_constraintStart_toStartOf="@+id/img_great"
@@ -214,7 +257,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="ดีมาก"
+                    android:text="ดีเยี่ยม"
                     android:textSize="18sp"
                     app:layout_constraintEnd_toEndOf="@+id/img_excellent"
                     app:layout_constraintStart_toStartOf="@+id/img_excellent"
@@ -227,7 +270,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Very Poor"
+                    android:text="Poor"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/img_verypoor"
@@ -241,7 +284,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Poor"
+                    android:text="Fair"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/img_poor"
@@ -255,7 +298,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Average"
+                    android:text="Good"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/img_normal"
@@ -269,7 +312,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Good"
+                    android:text="Very Good"
                     android:textSize="18sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/img_great"

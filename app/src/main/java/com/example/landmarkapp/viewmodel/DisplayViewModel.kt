@@ -18,7 +18,7 @@ class DisplayViewModel(tts : TextToSpeech) : ViewModel() {
     private var soundList = ArrayList<SoundQueueResponse>()
     private lateinit var textToSpeech: TextToSpeech
     var mutableLiveData: MutableLiveData<ArrayList<QueueResponse>> = repo.getQueueLiveData()
-    var mutableSoundLiveData: MutableLiveData<ArrayList<SoundQueueResponse>> = repo.getSoundQueueLiveData(this)
+    var mutableSoundLiveData: MutableLiveData<ArrayList<SoundQueueResponse>> = repo.getSoundQueueLiveData()
     var currentQueueLiveData = MutableLiveData<CharSequence>()
     var waitingQueueLiveData = MutableLiveData<Int>()
     private lateinit var handler: Handler
@@ -64,7 +64,7 @@ class DisplayViewModel(tts : TextToSpeech) : ViewModel() {
     }
 
     fun getSpeech(){
-        mutableSoundLiveData = repo.getSoundQueueLiveData(this)
+        mutableSoundLiveData = repo.getSoundQueueLiveData()
     }
 
     fun speech(){

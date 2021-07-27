@@ -260,7 +260,8 @@
                 app:cardCornerRadius="@dimen/queue_menu_radius"
                 app:cardElevation="@dimen/elevation_widget"
                 app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
-                app:layout_constraintEnd_toStartOf="@+id/previous_btn"
+                app:layout_constraintEnd_toStartOf="@+id/transfer_btn"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/call_btn"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -286,8 +287,9 @@
                 app:cardCornerRadius="@dimen/queue_menu_radius"
                 app:cardElevation="@dimen/elevation_widget"
                 app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/aon"
+                app:layout_constraintEnd_toStartOf="@+id/previous_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/transfer_btn"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -312,8 +314,9 @@
                 app:cardCornerRadius="@dimen/queue_menu_radius"
                 app:cardElevation="@dimen/elevation_widget"
                 app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
-                app:layout_constraintEnd_toStartOf="@+id/aon"
-                app:layout_constraintStart_toEndOf="@+id/repeat_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/skip_btn"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -331,17 +334,17 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/aon"
+                android:id="@+id/transfer_btn"
                 android:layout_width="@dimen/img_icon_size"
                 android:layout_height="@dimen/img_icon_size"
                 android:layout_margin="10dp"
-                android:onClick="@{() -> viewModel.callPreviousQueue()}"
                 app:cardBackgroundColor="@color/n5"
                 app:cardCornerRadius="@dimen/queue_menu_radius"
                 app:cardElevation="@dimen/elevation_widget"
                 app:layout_constraintBottom_toTopOf="@+id/clear_queue_btn"
                 app:layout_constraintEnd_toStartOf="@+id/skip_btn"
-                app:layout_constraintStart_toEndOf="@+id/previous_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/repeat_btn"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <com.google.android.material.textview.MaterialTextView
@@ -358,20 +361,38 @@
 
             </com.google.android.material.card.MaterialCardView>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/clear_present_queue_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:onClick="@{() -> viewModel.clearPresentQueue()}"
+                android:text="เสร็จสิ้นคิวปัจจุบัน"
+                android:textSize="23sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/elderGreen"
+                app:cornerRadius="15dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/clear_queue_btn"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+            </com.google.android.material.button.MaterialButton>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/clear_queue_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:onClick="@{() -> viewModel.clearQueue()}"
                 android:text="เคลียร์คิวทั้งหมด"
-                android:textSize="23dp"
+                android:textSize="23sp"
+                android:textStyle="bold"
                 app:backgroundTint="@color/red"
                 app:cornerRadius="15dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/clear_present_queue_btn">
 
             </com.google.android.material.button.MaterialButton>
 

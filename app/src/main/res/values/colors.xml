@@ -17,7 +17,7 @@
     <color name="yellow">#FFFE00</color>
     <color name="orange">#FFA100</color>
     <color name="fewViolet">#F7AAFF</color>
-    <color name="blue">#0361FF</color>
+    <color name="blue">#3478BB</color>
     <color name="moreBlue">#0045B8</color>
     <color name="fewBlue">#9BD7FF</color>
     <color name="sky">#3CBBFF</color>
@@ -47,4 +47,19 @@
     <color name="quenumber3">#C3E2D3</color>
     <color name="tapque">#E1E2DD</color>
 
+    <color name="gray">#ECEAEA</color>
+    <color name="cyan">#47A8DF</color>
+    <color name="darkgray">#626161</color>
+    <color name="pink">#F091BC</color>
+    <color name="orange_2">#F8B869</color>
+    <color name="darkgreen">#478F48</color>
+    <color name="graphexcellent">#73B741</color>
+    <color name="graphgood">#C3D126</color>
+    <color name="graphaverage">#D1970F</color>
+    <color name="graphpoor">#EC6E1C</color>
+    <color name="graphverypoor">#CE1B1A</color>
+    <color name="nowhite">#EADEDE</color>
+    <color name="new_green">#AFD7BD</color>
+    <color name="few_yellow">#F3EF9B</color>
+    <color name="lightblue">#92D4F3</color>
 </resources>

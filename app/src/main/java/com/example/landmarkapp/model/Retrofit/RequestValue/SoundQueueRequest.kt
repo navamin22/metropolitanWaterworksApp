@@ -12,6 +12,11 @@ data class SoundQueueRequest (
     @SerializedName("message")
     val msg: String = "",
     @SerializedName("active")
-    val active: String = ""
+    val active: String = "",
+
+    @SerializedName("serviceChannel")
+    val serviceChannel: String = "",
+    @SerializedName("serviceCounter")
+    val serviceCounter: Int
 
     )

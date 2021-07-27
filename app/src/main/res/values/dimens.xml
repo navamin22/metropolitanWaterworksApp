@@ -5,4 +5,22 @@
     <dimen name="elevation_widget">10dp</dimen>
     <dimen name="dialog_close_size">38dp</dimen>
     <dimen name="dialog_img_title_size">75dp</dimen>
+    <dimen name="display_queue_portrait_logo_text_size">28sp</dimen>
+    <dimen name="display_queue_portrait_padding">12dp</dimen>
+    <dimen name="display_queue_portrait_title_text_size">38sp</dimen>
+    <dimen name="display_queue_portrait_text_size">60sp</dimen>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="padding_60">60dp</dimen>
+    <dimen name="padding_8">8dp</dimen>
+    <dimen name="padding_30">30dp</dimen>
+    <dimen name="letter_16">16sp</dimen>
+    <dimen name="padding_10">10dp</dimen>
+    <dimen name="ic_bestseller_size">100dp</dimen>
+    <dimen name="rank_img_size">48dp</dimen>
+    <dimen name="card_rank_text_size">18sp</dimen>
+    <dimen name="recycler_promo_text_size">14sp</dimen>
+    <dimen name="menu_line_spacing">10dp</dimen>
 </resources>

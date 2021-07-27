@@ -1,8 +1,6 @@
 package com.example.landmarkapp.model.Retrofit.Interface
 
-import com.example.landmarkapp.model.Retrofit.RequestValue.NormalRequest
-import com.example.landmarkapp.model.Retrofit.RequestValue.QueueRequest
-import com.example.landmarkapp.model.Retrofit.RequestValue.QueueUpdateRequest
+import com.example.landmarkapp.model.Retrofit.RequestValue.*
 import com.example.landmarkapp.model.Retrofit.response.QueueResponse
 import com.example.landmarkapp.utils.StaticData.Companion.queue_php
 import retrofit2.Call
@@ -21,8 +19,23 @@ interface QueueService {
     ): Call<String>
 
     @POST(queue_php)
+    fun transferQueue(
+        @Body request: TransferQueueRequest
+    ): Call<String>
+
+    @POST(queue_php)
+    fun finishQueue(
+        @Body request: QueueFinishRequest
+    ): Call<String>
+
+    @POST(queue_php)
     fun getQueue(
         @Body request: NormalRequest
+    ): Call<List<QueueResponse>>
+
+    @POST(queue_php)
+    fun getQueueFromService(
+        @Body fromServiceRequest: QueueFromServiceRequest
     ): Call<List<QueueResponse>>
 
     @POST(queue_php)
@@ -30,4 +43,8 @@ interface QueueService {
         @Body request: NormalRequest
     ): Call<String>
 
+    @POST(queue_php)
+    fun clearQueueFromService(
+        @Body request: QueueFromServiceRequest
+    ): Call<String>
 }

@@ -20,7 +20,6 @@ import java.util.*
 
 
 class DisplayActivity : BaseActivity() {
-    private val repo: Repository = Repository()
     private lateinit var binding: ActivityDisplayBinding
     private lateinit var displayViewModel: DisplayViewModel
     private lateinit var viewModelFactory: DisplayFactory
@@ -82,9 +81,9 @@ class DisplayActivity : BaseActivity() {
                 displayViewModel.setSpeechList(it)
             })
 
-        binding.waitTitle.setOnClickListener {
-            displayViewModel.speech()
-        }
+//        binding.waitTitle.setOnClickListener {
+//            displayViewModel.speech()
+//        }
     }
 
     private fun countDownLoop(){
